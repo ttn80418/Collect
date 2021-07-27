@@ -1,0 +1,18 @@
+/*在解析度<768(手機模式)會執行以下動作*/
+	@media screen and (max-width: 768px){
+		.table-rwd thead{
+			display: none;/*隱藏欄位*/
+		}
+		.table-rwd tbody tr{
+			display: block;
+			border:2px solid #6BC2F8;
+			margin:10px 0 ;
+		}
+		.table-rwd tbody tr td{
+			display: block;
+		}
+		.table-rwd tbody tr td:before{
+			content: attr(data-th)":";/*用attr取得上列的data-th參數*/
+			color:red;
+		}
+	}

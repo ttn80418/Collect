@@ -1,0 +1,32 @@
+.logo{
+	width: 200px;
+	margin-top: 0px;
+	margin-bottom:0px;
+	margin-right: auto;
+	margin-left: auto;
+		
+}
+.imgs{ /*寫在圖裡不會有相框白邊*/
+	box-shadow: 8px 5px 16px 4px #aaa;
+
+	border-radius: 10px;  /*圓角*/
+}
+.circle{
+	box-shadow: 8px 7px 16px 4px #aaa; 
+	 /*圖片效果*共5個參數(x軸--陰影靠右 負數為左邊 ,y軸陰影靠下 負數為上面,
+	 渲染效果 愈大愈明顯, 框的寬度, 顏色)*/
+	border-radius: 100px;
+}
+.ptext{/*文字顏色&大小轉換 ctrl+shift+c呼叫*/
+	color: #33C526;
+	font-size: 20px;
+}
+#map{/*地圖基本框架*/
+	width: 500px;
+	height: 700px;
+	box-shadow: 2px 2px 2px 3px #ccc;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: auto;
+	margin-right: auto;
+}
