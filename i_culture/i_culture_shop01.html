@@ -5,12 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>❤文創-三時福利社-產品細節</title>
+    <title>❤文創-審計新村-三時福利社</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"><!-- 載入第三方icon css套件 -->      
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"><!-- 載入第三方icon css套件 -->  
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -27,7 +26,7 @@
     		background-color: white;
     	}
     	.banner{
-    		background-image: url(images/i02.jpg);
+    		background-image: url(../images/i02.jpg);
     		background-repeat: no-repeat;
     		background-position: center center;
     		-webkit-background-size: cover;
@@ -38,7 +37,7 @@
 		}    	
     	.wow{
     		border-radius:0;
-    		margin-bottom: 1px;
+    		margin-bottom: 0px;
     	} 
     	.footer{
     		background-color: black;
@@ -48,42 +47,19 @@
     		padding: 10px 0px;
     		margin-top: 5px;
     	}
-		.title{
-			font-weight: bold;
-			color: #F64F4F;
-		}
-		.detail{
-			color: #1DABD1;			
-		}
-		.mr-5{
-			margin-right: 5px;
-		}
-		.detail_text{
-			color: black;
-		}
-		.wow{
-    		border-radius: 0;
-    		margin-bottom: 0px;
+    	.item{
+    		margin-top: 10px;
     	}
-    	@media screen and (max-width: 576px){
-    		.table-rwd thead{
-    			display: none;
-    		}
-    		 .table tbody tr{
-    		display: block;
-    		border-radius: 2px solid #F47A7A;
-    		margin:10px 0;
-    		}
-    		.table tbody tr td{
-    			display: block;
-    			font-size:20px;
-    		}
-    		.table tbody  tr td:before{
-    			content: attr(data-th)":";
-    			font-weight: bold;
-    			color: red;
-    		}		
-    	}    	  	
+		.item h2{
+			font-weight: bold;
+			color:#1DABD1;
+		}
+		.item p{
+			color:black;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}    	    	   		
   </style>
   <body>
  	<nav class="navbar navbar-default wow"><!-- default預設白 inverse黑色 -->
@@ -97,70 +73,50 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="i_culture_index.html">❤文創-審計新村</a><!-- 用glyphicon加上icon -->
+	      <a class="navbar-brand" href="../i_culture/i_culture_index.html">❤文創-審計新村</a><!-- 用glyphicon加上icon -->
 	    </div>
 
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 <!-- -----選單2及下拉選單----- -->
 	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="iculture_about.html"><i class="fas fa-edit mr5"></i>關於我們</a></li>
-	        <li><a href="i_culture_shop.html"><i class="fas fa-coffee mr5"></i>店家介紹</a></li>
-	        <li><a href="iculture_traffic.html"><i class="fas fa-location-arrow mr5"></i>交通資訊</a></li>
+	        <li><a href="../i_culture/iculture_about.html"><i class="fas fa-edit mr5"></i>關於我們</a></li>
+	        <li><a href="../i_culture/i_culture_shop.html"><i class="fas fa-coffee mr5"></i>店家介紹</a></li>
+	        <li><a href="../i_culture/iculture_traffic.html"><i class="fas fa-location-arrow mr5"></i>交通資訊</a></li>
 	      </ul>
 	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
 	</nav>
 
-	<div class="banner"></div>
-	<div class="container">
-		<h1 class="detail">︱ 產品細節<small>Details</small></h1>
-		<div class="row">
-			<div class="col-md-8">
-				<div class="pimg">
-					<img src="images/s1_1.jpg" alt="" class="img-responsive">
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="detail_text">
-					<h1>季節限定鳳梨香橙杏仁豆腐冰</h1>
+<div class="banner"></div>
+<div class="container-fluid">
+	<div class="row">
+			<div class="col-md-4 text-center">
+				<div class="item">
+					<img src="../images/s1_1.jpg" alt="" class="img-responsive">
+					<h2>季節限定鳳梨香橙杏仁豆腐冰</h2>
 					<p>鳳梨有先糖漬過，切成塊狀跟著杏仁豆乳一起擺在剉冰的上頭，香橙片藏在剉冰的中間，底下還有紅茶冰，整杯有得吃又有得喝，吃的到QQ的杏仁豆腐</p>
-					<p>價格:120元起 /杯</p>
-					<p>分類:<span class="label label-success mr-5 ">水果</span><span class="label label-danger mr-5">冰品</span></p>
-					<table class="table table-bordered table table-rwd ">
-						<thead>
-							<tr class="bg-primary">
-								<th>尺寸</th>
-								<th>價格</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td data-th="尺寸">小杯</td>
-								<td data-th="價格">120元</td>
-							</tr>
-							<tr>
-								<td data-th="尺寸">中杯</td>
-								<td data-th="價格">150元</td>
-							</tr>
-							<tr>
-								<td data-th="尺寸">大杯</td>
-								<td data-th="價格">180元</td>
-							</tr>														
-						</tbody>
-					</table>
-					<form action="">
-						<div class="form-group">
-							<label for="">數量</label>
-							<input type="text" class="form-control"></input>
-						</div>
-					</form>
-					<a href="" class="btn btn-info">我要購買</a>
-					<a href="" class="btn btn-warning">加入最愛</a>
+					<a href="../i_culture/i_culture_shop01_details.html" class="btn btn-primary">詳細內容</a>
 				</div>
 			</div>
-		</div>
-	</div>
+			<div class="col-md-4 text-center">
+				<div class="item">
+					<img src="../images/s1_2.jpg" alt="" class="img-responsive">
+					<h2>原味杏仁茶</h2>
+					<p> 來一碗古早味杏仁茶， 濃烈的文青意象，滿滿懷舊味道。</p>
+					<a href="../i_culture/i_culture_shop01_details2.html" class="btn btn-primary">詳細內容</a>
+				</div>
+			</div>
+			<div class="col-md-4 text-center">
+				<div class="item">
+					<img src="../images/s1_3.jpg" alt="" class="img-responsive">
+					<h2>綠茶紅豆小湯圓豆腐冰</h2>
+					<p>上頭粒粒分明的紅豆，搭配我們自家的招牌杏仁，在運用良好的比例精心調製而成，邀您來親自體驗!</p>
+					<a href="../i_culture/i_culture_shop01_details3.html" class="btn btn-primary">詳細內容</a>
+				</div>
+			</div>			
+	</div><!-- row-end -->
+</div>
 
 <div class="cleafix"></div><!-- +此行避免跑版 --></div>
 <div class="footer text-center">❤文創-審計新村 版權所有</div>
@@ -169,7 +125,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </body>
-<style>
+ <style>
 .navbar-default {
   background-color: #8bcaec;
   border-color: #1077d8;
@@ -259,5 +215,5 @@
     background-color: #1077d8;
   }
 }	
-</style>   
+</style>  
 </html>
