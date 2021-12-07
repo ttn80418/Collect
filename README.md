@@ -10,6 +10,6 @@
 
 4.形象官網練習 參考網站形象官網設計，用Bootstrap來設計。
 
-5.i_culture_xxx 專題形象官網
+5.i_culture專題形象官網
 
 6.chat 簡易聊天室練習
