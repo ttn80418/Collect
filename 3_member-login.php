@@ -28,7 +28,7 @@ session_destroy();
 			$("#ok_btn").bind("click", function() {
 				$.ajax({
 					type: "POST",
-					url: "http://localhost/collect/API/20190218-member-login_api.php",
+					url: "http://localhost/dashboard/Collect/API/member-login.php",
 					data: 
 					{
 						username: $("#username").val(),
@@ -37,27 +37,20 @@ session_destroy();
 					success: login,
 					error: function() {
 						alert("登入API回傳失敗");
-					} //000url https://tcnr1624.000webhostapp.com/Personal_Collect/API/20190218-member-login_api.php
+					} 
 				}); //end ajax
 			}); //end click function()
 		});
 
-		// function login(data){
-		// 	//alert(data);//測試是否成功
-		// 	if(data){
-		// 		location.href = "3_member-read.php";
-		// 	}else{
-		// 		alert(data);
-		// 	}
-		// }
+
 		//10.01新增 若為superuser則導入 可進行更新刪除的read.php 反之則只有更新功能的read_only.php	
 		function login(data) {
 			//alert(data);//測試是否成功 data= login_success
 			//alert($("#username").val());//取得帳號的值
 			if ($("#username").val() == "superuser") {
-				location.href = "3_member-read.php";
+				location.href = "3_member-admin.php";
 			} else {
-				location.href = "3_member-read_only.php";
+				location.href = "3_member-read.php";
 			}
 		}
 	</script>
