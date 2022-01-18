@@ -1,14 +1,16 @@
 <?php
 $member_id = $_GET["ID"];
 
-require_once("dbtools.inc.php");
+require_once("db_config.php");
 $link = create_connect();
 
 $sql = "SELECT * FROM members WHERE ID = $member_id";
-$result = execute_sql($link, "collect", $sql);
+$data = $link->prepare($sql);
+$data->execute();
+$total_records = $data->rowCount();
 
-if (mysqli_num_rows($result) == 1) {
-	$row = mysqli_fetch_assoc($result);
+if ($total_records == 1) {
+	$row = $data->fetch(PDO::FETCH_ASSOC);
 	echo $row["Username"];
 } else {
 	echo "update error";
@@ -75,7 +77,7 @@ if (mysqli_num_rows($result) == 1) {
 					if (confirm("確定更新此筆資料？")) {
 						$.ajax({
 							type: "POST",
-							url: "http://localhost/collect/API/20190218-member-update-api.php",
+							url: "http://localhost/dashboard/Collect/API/member-update.php",
 							data: {
 								ID: $(this).data("id"),
 								username: $("#username").val(),
@@ -91,20 +93,11 @@ if (mysqli_num_rows($result) == 1) {
 					}
 				});
 			});
-			// function showupdate(data){
-			// 	if(data){
-			// 		alert(data)
-			// 		location.href="3_member-read.php"
-			// 	}else{
-			// 		alert("update error");
-			// 	}
-			// }
-			//10.01新增 若為superuser以外的一般帳號 都導至_only頁面 此更新頁之php為superuser所用
 			function showupdate(data) {
 				//alert(data);//測試是否成功 data= login_success
 				//alert($("#username").val());//取得帳號的值
 				if (data) {
-					location.href = "3_member-read.php";
+					location.href = "3_member-admin.php";
 				} else {
 					alert("update error");
 				}

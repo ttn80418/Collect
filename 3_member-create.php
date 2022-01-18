@@ -33,7 +33,7 @@
 			$("#reg_ok").bind("click", function() {
 				$.ajax({
 					type: "POST",
-					url: "http://localhost/collect/API/20190218-member-create_api.php",
+					url: "http://localhost/dashboard/Collect/API/member-create.php",
 					data: {
 						username: $("#username").val(),
 						password: $("#password").val(),
@@ -43,17 +43,19 @@
 					success: reg,
 					error: function() {
 						alert("註冊api回傳失敗");
+						window.location.href="http://localhost/dashboard/Collect/API/member-create.php" 
 					}
 				}); // end ajax
 			});
 		}); // end function()
-		//url https://tcnr1624.000webhostapp.com/Personal_Collect/API/20190218-member-create_api.php
+		
 
 		function reg(data) {
-			if (data) {
+			if (data == 'success') {
 				location.href = "3_member-login.php";
-			} else {
-				alert(data);
+			} else if(data == 'fail') {
+				alert(註冊失敗,請重新註冊);
+				window.location.href="http://localhost/dashboard/Collect/API/member-create.php" 
 			}
 		}
 	</script>

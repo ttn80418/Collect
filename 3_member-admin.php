@@ -4,7 +4,7 @@ session_start();
 if (isset($_SESSION["username"])) {
 	echo '<script>alert("' . $_SESSION["username"] . '會員您好");</script>';
 } else {
-	echo '<script>alert("帳號或密碼輸入錯誤!請重新登入!");location.href="3_member-login.php";</script>';
+	echo '<script>alert("請先登入會員");location.href="3_member-login.php";</script>';
 }
 ?>
 
@@ -16,7 +16,7 @@ if (isset($_SESSION["username"])) {
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-	<title>個人會員中心</title>
+	<title>會員名單</title>
 
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -46,6 +46,7 @@ if (isset($_SESSION["username"])) {
 						<tr>
 							<th>ID</th>
 							<th>Username</th>
+							<th>Password</th>
 							<th>Bday</th>
 							<th>Sex</th>
 							<th>Create_time</th>
@@ -74,7 +75,7 @@ if (isset($_SESSION["username"])) {
 		$(function() {
 			$.ajax({
 				type: "GET",
-				url: "http://localhost/collect/API/20190218-member-read-api.php",
+				url: "http://localhost/dashboard/Collect/API/member-read.php",
 				dataType: "json",
 				success: showMember,
 				error: function() {
@@ -88,32 +89,35 @@ if (isset($_SESSION["username"])) {
 			//console.log(data.length);
 			for (i = 0; i < data.length; i++) {
 				srHTML = "";
-				srHTML = '<tr><td>' + data[i].ID + '</td><td>' + data[i].Username + '</td><td>' + data[i].Bday + '</td><td>' + data[i].Sex + '</td><td>' + data[i].Date + '</td><td><a href="3_member-update_only.php?ID=' + data[i].ID + '" class="btn btn-primary">更新</a></td></tr>';
+				srHTML = '<tr><td>' + data[i].ID + '</td><td>' + data[i].Username + '</td><td>' + data[i].Password + '</td><td>' + data[i].Bday + '</td><td>' + data[i].Sex + '</td><td>' + data[i].Date + '</td><td><a href="3_member-update.php?ID=' + data[i].ID + '" class="btn btn-primary">更新</a><a data-id="' + data[i].ID +  '" href="#" class="btn btn-danger" onclick="del_item(this) ">刪除</a></td></tr>';
 				$("#member_list").append(srHTML);
 				//按下刪除需新增一個詢問視窗。 用confirm方法(用w3 cschool搜尋)	
 				//又或是新增一個onclick 方法	()中this 為目前按到的item id	
 			}
 		}
-		// function del_item(myevent){
-		//   // console.log($(myevent).data("id"));
-		//   if(confirm("確定刪除會員"+$(myevent).data("id")+"??")){
-		//     $.ajax({
-		//       type: "POST",
-		//       url: "https://tcnr1624.000webhostapp.com/Personal_Collect/API/20190218-member-delete-api.php",
-		//       data: {ID: $(myevent).data("id")},
-		//       success:show,
-		//       error: function(){
-		//         alert("刪除會員API失敗");
-		//       }
-		//     });
-		//   }else{
 
-		//   }
-		// }
+		function del_item(myevent) {
+			// console.log($(myevent).data("id"));
+			if (confirm("確定刪除會員" + $(myevent).data("id") + "??")) {
+				$.ajax({
+					type: "POST",
+					url: "http://localhost/dashboard/Collect/API/member-delete.php",
+					data: {
+						ID: $(myevent).data("id")
+					},
+					success: show,
+					error: function() {
+						alert("刪除會員API失敗");
+					}
+				});
+			} else {
+
+			}
+		}
 
 		function show(data) {
 			if (data) {
-				location.href = "3_member-read.php";
+				location.href = "3_member-admin.php";
 			} else {
 				alert("刪除會員失敗");
 			}
